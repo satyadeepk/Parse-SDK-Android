@@ -1030,14 +1030,14 @@ public class ParseQuery<T extends ParseObject> {
    *
    * @see ParseQuery#setCachePolicy(CachePolicy)
    */
-  /* package */ ParseQuery<T> fromNetwork() {
+  public ParseQuery<T> fromNetwork() {
     checkIfRunning();
 
     builder.fromNetwork();
     return this;
   }
 
-  /* package */ boolean isFromNetwork() {
+  public boolean isFromNetwork() {
     return builder.isFromNetwork();
   }
 
