@@ -944,10 +944,7 @@ public class ParseQuery<T extends ParseObject> {
 
   private void checkIfRunning(boolean grabLock) {
     synchronized (lock) {
-      if (isRunning) {
-        throw new RuntimeException(
-            "This query has an outstanding network connection. You have to wait until it's done.");
-      } else if (grabLock) {
+      if (grabLock) {
         isRunning = true;
         cts = Task.create();
       }
